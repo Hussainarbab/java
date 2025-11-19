@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Document</title>
 </head>
 <body>
     
+<!-- 
+<button id="toggleColorBtn">Toggle Color</button> -->
 
-<button id="toggleColorBtn">Toggle Color</button>
+<nav style="display:flex; justify-content:space-between; padding:15px; background:#eee;">
+  <h2>My Navbar</h2>
+
+  <div>
+    <button onclick="darkMode()">Dark</button>
+    <button onclick="lightMode()">Light</button>
+  </div>
+</nav>
 
     <script src="app.js"></script>
 </body>
