@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrightTodo — Simple & Pretty Todo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
-<!-- 
-<button id="toggleColorBtn">Toggle Color</button> -->
+  <main class="app">
+    <header class="app-header">
+      <div>
+        <h1 class="logo">Bright<span class="accent">Todo</span></h1>
+        <p class="tag">Organize tasks — feel accomplished ✨</p>
+      </div>
+      <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    </header>
 
-<nav style="display:flex; justify-content:space-between; padding:15px; background:#eee;">
-  <h2>My Navbar</h2>
-  </nav>
+    <section class="card">
+      <div class="input-row">
+        <input id="newTodo" type="text" placeholder="Add a new task and press Enter" aria-label="New todo" />
+        <button id="addBtn" class="add-btn">Add</button>
+      </div>
 
-  <div>
-    
+      <ul id="todoList" class="todo-list" aria-live="polite"></ul>
 
+      <div class="controls">
+        <div class="left">
+          <span id="count">0 items</span>
+        </div>
+        <div class="center">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="active">Active</button>
+          <button class="filter" data-filter="completed">Completed</button>
+        </div>
+        <div class="right">
+          <button id="clearCompleted" class="muted">Clear completed</button>
+        </div>
+      </div>
+    </section>
 
-    <button onclick="darkMode()">Dark</button>
-    <button onclick="lightMode()">Light</button>
-  </div>
+    <footer class="footer-note">Made with ❤️ — Double-click a task to edit</footer>
+  </main>
 
-
-    <script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
