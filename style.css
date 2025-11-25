@@ -1,0 +1,59 @@
+
+:root{
+  --bg: #f7f9fc;
+  --card: #ffffff;
+  --text: #0f1724;
+  --muted: #6b7280;
+  --accent: #7c3aed;
+  --shadow: rgba(18, 38, 63, 0.08);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+body{background:linear-gradient(180deg,#f0f7ff 0%,var(--bg) 100%);color:var(--text);display:flex;align-items:center;justify-content:center;padding:40px}
+.app{width:100%;max-width:720px}
+.app-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.logo{font-weight:700;margin:0;font-size:1.6rem}
+.accent{color:var(--accent)}
+.tag{margin:2px 0 0;color:var(--muted);font-size:0.95rem}
+.theme-btn{background:transparent;border:0;font-size:1.15rem;cursor:pointer}
+
+.card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 24px var(--shadow)}
+.input-row{display:flex;gap:10px;margin-bottom:12px}
+#newTodo{flex:1;padding:12px 14px;border-radius:10px;border:1px solid #e6edf7;font-size:0.98rem;outline:none}
+#newTodo:focus{box-shadow:0 6px 18px rgba(124,58,237,0.12);border-color:rgba(124,58,237,0.25)}
+.add-btn{background:linear-gradient(90deg,var(--accent),#5b21b6);color:#fff;border:0;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:600}
+.add-btn:active{transform:translateY(1px)}
+
+.todo-list{list-style:none;margin:0;padding:0;max-height:360px;overflow:auto}
+.todo-item{display:flex;align-items:center;gap:12px;padding:10px;border-radius:8px;border:1px solid transparent;margin-bottom:8px;transition:all .18s}
+.todo-item:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(12,17,27,0.04)}
+.checkbox{width:18px;height:18px;border-radius:6px;border:2px solid #e6edf7;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.checkbox.checked{background:linear-gradient(90deg,var(--accent),#5b21b6);border:0;color:#fff}
+.todo-text{flex:1;font-size:1rem}
+.todo-text.completed{text-decoration:line-through;color:var(--muted);opacity:0.85}
+.actions{display:flex;gap:8px}
+.icon-btn{background:transparent;border:0;color:var(--muted);cursor:pointer}
+.icon-btn.delete{color:#ef4444}
+
+.controls{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:8px;border-top:1px dashed #eef3fb}
+.controls .center{display:flex;gap:8px}
+.filter{background:transparent;border:0;padding:6px 10px;border-radius:999px;cursor:pointer;color:var(--muted)}
+.filter.active{background:#f3f0ff;color:var(--accent);font-weight:600}
+.muted{background:transparent;border:0;color:var(--muted);cursor:pointer}
+
+.footer-note{text-align:center;margin-top:14px;color:var(--muted);font-size:0.9rem}
+
+/* Dark theme */
+body.dark{background:linear-gradient(180deg,#071025 0%,#071022 100%);color:#e6eef8}
+body.dark .card{background:#071129;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+body.dark .input-row input{background:#041029;color:#dbeafe;border:1px solid #0b2540}
+body.dark .add-btn{filter:brightness(1.05)}
+body.dark .todo-item{border:1px solid rgba(255,255,255,0.03)}
+body.dark .filter{color:#9fb3d9}
+
+@media (max-width:520px){
+  .app{padding:0 12px}
+  .logo{font-size:1.2rem}
+  #newTodo{font-size:0.95rem}
+}
